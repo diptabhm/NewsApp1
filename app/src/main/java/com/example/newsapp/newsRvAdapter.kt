@@ -2,22 +2,16 @@ package com.example.newsapp
 
 import android.content.Context
 import android.content.Intent
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.newsapp.models.Article
 import com.squareup.picasso.Picasso
-import kotlinx.coroutines.NonDisposableHandle.parent
 
-class newsRvAdapter(private var articlesArraylist: ArrayList<Article>, private var context: Context): RecyclerView.Adapter<newsRvAdapter.ViewHolder>() {
-
-
-
-
+class newsRvAdapter(private var articlesArraylist: List<Article>, private var context: Context): RecyclerView.Adapter<newsRvAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.new_rv_item, parent, false)

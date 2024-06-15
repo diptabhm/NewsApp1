@@ -11,11 +11,15 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val fragment = News_details()
+        val fragment = NewsHeadlines()
+
+        // Optionally, pass any extras from the intent to the fragment's arguments
         fragment.arguments = intent.extras
 
+        // Replace the fragment container with the NewsHeadlines fragment
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainerView, fragment)
+            .replace(R.id.fragmentContainerView, fragment) // Ensure R.id.fragmentContainerView exists in activity_main.xml
             .commit()
+
     }
 }
